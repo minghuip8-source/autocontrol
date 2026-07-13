@@ -1,0 +1,18 @@
+[package]
+name = "autocontrol"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.103"
+arboard = "3.6.1"
+image = "0.25.10"
+thiserror = "2.0.18"
+windows = { version = "0.62", features = [
+    # 鼠标键盘
+    "Win32_UI_Input_KeyboardAndMouse",
+
+    # 窗口
+    "Win32_UI_WindowsAndMessaging",
+]}
+xcap = "0.9.6"

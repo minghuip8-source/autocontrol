@@ -14,7 +14,7 @@
 
 ## 安装
 运行 `cargo add autocontrol` 
-或者在Cargo.toml文件中添加`autocontrol`
+或者在Cargo.toml文件中添加`autocontrol = "0.1.1"`
 
 ## 使用方法
 导入并初始化AutoControl

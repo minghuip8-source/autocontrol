@@ -2,6 +2,18 @@
 name = "autocontrol"
 version = "0.1.0"
 edition = "2024"
+description = "`autocontrol` 是一个基于 Rust 开发的 Windows 自动化控制库，它封装了 Windows 原生 API，提供简单、安全、高性能的自动化接口。"
+license = "MIT OR Apache-2.0"
+
+repository ="https://github.com/minghuip8-source/autocontrol"
+
+
+readme = "README.md"
+rust-version = "1.96.0"
+exclude = [
+    ".github/",
+    "target/"
+]
 
 [dependencies]
 anyhow = "1.0.103"

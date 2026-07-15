@@ -9,7 +9,7 @@ repository ="https://github.com/minghuip8-source/autocontrol"
 
 
 readme = "README.md"
-rust-version = "1.96.0"
+
 exclude = [
     ".github/",
     "target/"

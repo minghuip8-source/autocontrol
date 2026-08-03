@@ -82,6 +82,18 @@ impl AutoControl {
     pub fn left_up(&self) -> Result<()> {
         Ok(WindowsMouse::left_up().unwrap())
     }
+    /// 判断鼠标左键是否被按下
+    pub fn is_left_pressed(&self) -> bool {
+        WindowsMouse::is_left_pressed()
+    }
+    /// 判断鼠标右键是否被按下
+    pub fn is_right_pressed(&self) -> bool {
+        WindowsMouse::is_right_pressed()
+    }
+    /// 判断鼠标中键是否被按下
+    pub fn is_middle_pressed(&self) -> bool {
+        WindowsMouse::is_middle_pressed()
+    }
 
     /// 鼠标双击
     ///
@@ -339,6 +351,36 @@ impl AutoControl {
             .unwrap();
 
         self.press(key)
+    }
+    /// 判断按键是否被按下
+    /// # Arguments
+    ///
+    /// * `key` - 按键枚举
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// auto.is_pressed(Key::Alt);
+    /// ```
+    pub fn is_pressed(self, key: Key) -> bool {
+        WindowsKeyboard::is_pressed(key.vk())
+    }
+    /// 根据字符判断按键是否被按下
+    /// # Arguments
+    ///
+    /// * `key` - 按键名称
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// auto.is_pressed_str("alt");
+    /// ```
+    pub fn is_pressed_str(self, key: &str) -> bool {
+        let key = key
+            .parse::<Key>()
+            .map_err(|_| AutoError::InvalidKey(key.to_string()))
+            .unwrap();
+        self.is_pressed(key)
     }
 
     fn combo_vk(&self, keys: &[u16]) -> Result<()> {

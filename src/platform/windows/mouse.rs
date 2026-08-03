@@ -106,6 +106,20 @@ impl WindowsMouse {
         Self::middle_down().unwrap();
         Self::middle_up()
     }
+    #[inline]
+    pub fn is_left_pressed() -> bool {
+        unsafe { GetAsyncKeyState(VK_LBUTTON.0 as i32) < 0 }
+    }
+
+    #[inline]
+    pub fn is_right_pressed() -> bool {
+        unsafe { GetAsyncKeyState(VK_RBUTTON.0 as i32) < 0 }
+    }
+
+    #[inline]
+    pub fn is_middle_pressed() -> bool {
+        unsafe { GetAsyncKeyState(VK_MBUTTON.0 as i32) < 0 }
+    }
 
     #[inline]
     pub fn wheel_up(delta: i32) -> Result<()> {

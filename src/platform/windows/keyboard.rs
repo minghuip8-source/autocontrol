@@ -101,4 +101,8 @@ impl WindowsKeyboard {
 
         Ok(())
     }
+    #[inline]
+    pub fn is_pressed(vk: u16) -> bool {
+        unsafe { GetAsyncKeyState(vk as i32) < 0 }
+    }
 }

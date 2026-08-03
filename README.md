@@ -49,6 +49,20 @@ fn main() {
     auto.left_down().unwrap();
     auto.left_up().unwrap();
 ```
+- 判断鼠标左键是否被按下
+```rust
+    auto.is_left_pressed();
+```
+- 判断鼠标右键是否被按下
+```rust
+    auto.is_right_pressed();
+```
+- 判断鼠标中键是否被按下
+```rust
+    auto.is_middle_pressed();
+```
+
+
 - 鼠标双击
 ```rust
     auto.double_click().unwrap();
@@ -115,6 +129,16 @@ fn main() {
 
     //使用字符串方式
     auto.press_str("b").unwrap();
+```
+- 判断按键是否被按下
+```rust
+    // 使用枚举方式
+    use autocontrol::Key;
+    auto.is_pressed(Key::Alt);
+    
+    //使用字符串方式
+    auto.is_pressed_str("alt");
+
 ```
 - 执行组合键
 ```rust

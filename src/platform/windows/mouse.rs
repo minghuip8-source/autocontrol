@@ -22,8 +22,9 @@ impl WindowsMouse {
     #[inline]
     pub fn set_enabled(enabled: bool) -> Result<()> {
         unsafe {
-            BlockInput(!enabled).ok().unwrap();
+            BlockInput(!enabled)?;
         }
+
         Ok(())
     }
 

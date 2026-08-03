@@ -362,7 +362,7 @@ impl AutoControl {
     /// ```
     /// auto.is_pressed(Key::Alt);
     /// ```
-    pub fn is_pressed(self, key: Key) -> bool {
+    pub fn is_pressed(&self, key: Key) -> bool {
         WindowsKeyboard::is_pressed(key.vk())
     }
     /// 根据字符判断按键是否被按下
@@ -375,7 +375,7 @@ impl AutoControl {
     /// ```
     /// auto.is_pressed_str("alt");
     /// ```
-    pub fn is_pressed_str(self, key: &str) -> bool {
+    pub fn is_pressed_str(&self, key: &str) -> bool {
         let key = key
             .parse::<Key>()
             .map_err(|_| AutoError::InvalidKey(key.to_string()))

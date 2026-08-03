@@ -13,8 +13,7 @@
 - 区域截图
 
 ## 安装
-运行 `cargo add autocontrol` 
-或者在Cargo.toml文件中添加`autocontrol = "0.1.1"`
+运行 `cargo add autocontrol`
 
 ## 使用方法
 导入并初始化AutoControl
@@ -31,6 +30,13 @@ fn main() {
 ```rust 
     let (x, y) = auto.position().unwrap();
     println!("x={x},y={y}");
+```
+- 禁用或恢复鼠标
+```rust
+    //禁用鼠标
+    auto.set_enabled(false).unwrap();
+    //恢复鼠标
+    auto.set_enabled(true).unwrap();
 ```
 - 左键单击
 ```rust

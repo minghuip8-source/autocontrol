@@ -52,6 +52,12 @@ impl AutoControl {
         Ok(WindowsMouse::position().unwrap())
     }
 
+    ///禁用或恢复鼠标
+
+    pub fn set_enabled(enabled: bool) -> Result<()> {
+        Ok(WindowsMouse::set_enabled(enabled).unwrap())
+    }
+
     /// 左键单击
     ///
     /// 模拟一次完整的：

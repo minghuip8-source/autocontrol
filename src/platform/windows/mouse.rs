@@ -19,6 +19,13 @@ impl WindowsMouse {
             Ok((pt.x, pt.y))
         }
     }
+    #[inline]
+    pub fn set_enabled(enabled: bool) -> Result<()> {
+        unsafe {
+            BlockInput(!enabled).ok().unwrap();
+        }
+        Ok(())
+    }
 
     #[inline]
     pub fn move_absolute(x: i32, y: i32) -> Result<()> {
